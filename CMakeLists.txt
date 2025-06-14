@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.12)
 if (DEFINED ENV{FREERTOS_PATH})
   SET(FREERTOS_PATH $ENV{FREERTOS_PATH})
 else()
-  SET(FREERTOS_PATH ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS-Kernel)
+  SET(FREERTOS_PATH ${CMAKE_CURRENT_LIST_DIR}/FreeRTOS)
 endif()
 
 message("FreeRTOS Kernel located in ${FREERTOS_PATH}")
@@ -36,7 +36,7 @@ project(embarcatech-freertos-tarefa-1 C CXX ASM)
 pico_sdk_init()
 
 add_executable(embarcatech-freertos-tarefa-1
-    main.c
+    src/main.c
 )
 
 target_include_directories(embarcatech-freertos-tarefa-1 PRIVATE
